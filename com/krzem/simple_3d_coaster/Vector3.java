@@ -114,8 +114,8 @@ public class Vector3 extends Constants{
 	public Vector3 perpendicular(){
 		Vector3 v=new Vector3(0,0,0);
 		if (this.x!=0){
-			v.x=-this.z;
 			v.z=this.x;
+			v.x=-this.z;
 		}
 		else if (this.y!=0){
 			v.x=this.y;
