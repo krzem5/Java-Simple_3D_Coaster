@@ -1,4 +1,5 @@
 ### Github File Push Ignore
 
 **/*.class
+com/krzem/simple_3d_coaster - Copy
 *.xml
