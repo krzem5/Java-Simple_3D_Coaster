@@ -411,6 +411,7 @@ public class Train extends Constants{
 		this.yv=0;
 		this.lt=-1;
 		this.t=0;
+		System.out.println(this.tl.tdt.vl);
 		this.pos=this.tl.tdt.vl[0][0].clone();
 		this.tpos=this.tl.tdt.vl[0][1].clone();
 		this.up=new Vector3(0,1,0);

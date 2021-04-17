@@ -8,8 +8,8 @@ import java.util.ArrayList;
 
 
 
-public class LiftTrackPiece extends TrackElement{
-	public LiftTrackPiece(Main.Main_ cls,Game game,TrackList tl,int tli,Vector3 a,Vector3 b){
+public class BreakTrackPiece extends TrackElement{
+	public BreakTrackPiece(Main.Main_ cls,Game game,TrackList tl,int tli,Vector3 a,Vector3 b){
 		this.cls=cls;
 		this.game=game;
 		this.tl=tl;
@@ -18,6 +18,7 @@ public class LiftTrackPiece extends TrackElement{
 		this.b=b;
 		this.dpa=new DragPoint(this.cls,this.game,this,this.a);
 		this.dpb=new DragPoint(this.cls,this.game,this,this.b);
+		this.dpb.disable_y();
 		this._regenerate();
 	}
 
@@ -30,7 +31,7 @@ public class LiftTrackPiece extends TrackElement{
 		this.dpb.enable(this.tli==this.tl.tpl.size()-1);
 		this.dpa.update(gl);
 		this.dpb.update(gl);
-		this.b.y=Math.max(this.b.y,this.a.y+1);
+		this.b.y=this.a.y+0;
 		this._regenerate();
 	}
 
@@ -164,7 +165,6 @@ public class LiftTrackPiece extends TrackElement{
 			ep.mag(TRACK_PIECE_ATTACH_BIGGER_WIDTH).rotate(ea,TRACK_PIECE_ATTACH_TOP_ROT).add(eo).vertex(gl);
 			this.game._tn++;
 		}
-		gl.glColor3d(0.89,0.89,0.89);
 		gl.glColor3d(0.55,0.55,0.55);
 		double y=sp.mag(TRACK_PIECE_ATTACH_BIGGER_WIDTH).rotate(sa,TRACK_PIECE_ATTACH_TOP_ROT).y;
 		Vector3 a=new Vector3(-BREAK_TRACK_PIECE_BREAK_BIGGER_WIDTH,y,BREAK_TRACK_PIECE_BREAK_SMALLER_SIZE_OFF).rotate(new Vector3(0,1,0),-Math.atan2(sa.z,sa.x)+Math.PI/2).add(so);
@@ -175,6 +175,62 @@ public class LiftTrackPiece extends TrackElement{
 		Vector3 f=new Vector3(-BREAK_TRACK_PIECE_BREAK_BIGGER_WIDTH,y+BREAK_TRACK_PIECE_BREAK_HEIGHT,-BREAK_TRACK_PIECE_BREAK_SMALLER_SIZE_OFF).rotate(new Vector3(0,1,0),-Math.atan2(ea.z,ea.x)+Math.PI/2).add(eo);
 		Vector3 g=new Vector3(-BREAK_TRACK_PIECE_BREAK_SMALLER_WIDTH,y+BREAK_TRACK_PIECE_BREAK_HEIGHT,-BREAK_TRACK_PIECE_BREAK_BIGGER_SIZE_OFF).rotate(new Vector3(0,1,0),-Math.atan2(ea.z,ea.x)+Math.PI/2).add(eo);
 		Vector3 h=new Vector3(-BREAK_TRACK_PIECE_BREAK_SMALLER_WIDTH,y+BREAK_TRACK_PIECE_BREAK_HEIGHT,BREAK_TRACK_PIECE_BREAK_BIGGER_SIZE_OFF).rotate(new Vector3(0,1,0),-Math.atan2(sa.z,sa.x)+Math.PI/2).add(so);
+		a.vertex(gl);
+		b.vertex(gl);
+		c.vertex(gl);
+		this.game._tn++;
+		a.vertex(gl);
+		c.vertex(gl);
+		d.vertex(gl);
+		this.game._tn++;
+		_e.vertex(gl);
+		f.vertex(gl);
+		g.vertex(gl);
+		this.game._tn++;
+		_e.vertex(gl);
+		g.vertex(gl);
+		h.vertex(gl);
+		this.game._tn++;
+		a.vertex(gl);
+		b.vertex(gl);
+		f.vertex(gl);
+		this.game._tn++;
+		a.vertex(gl);
+		f.vertex(gl);
+		_e.vertex(gl);
+		this.game._tn++;
+		c.vertex(gl);
+		d.vertex(gl);
+		h.vertex(gl);
+		this.game._tn++;
+		c.vertex(gl);
+		h.vertex(gl);
+		g.vertex(gl);
+		this.game._tn++;
+		a.vertex(gl);
+		d.vertex(gl);
+		h.vertex(gl);
+		this.game._tn++;
+		a.vertex(gl);
+		h.vertex(gl);
+		_e.vertex(gl);
+		this.game._tn++;
+		b.vertex(gl);
+		c.vertex(gl);
+		g.vertex(gl);
+		this.game._tn++;
+		b.vertex(gl);
+		g.vertex(gl);
+		f.vertex(gl);
+		this.game._tn++;
+		a=new Vector3(BREAK_TRACK_PIECE_BREAK_BIGGER_WIDTH,y,BREAK_TRACK_PIECE_BREAK_SMALLER_SIZE_OFF).rotate(new Vector3(0,1,0),-Math.atan2(sa.z,sa.x)+Math.PI/2).add(so);
+		b=new Vector3(BREAK_TRACK_PIECE_BREAK_BIGGER_WIDTH,y,-BREAK_TRACK_PIECE_BREAK_SMALLER_SIZE_OFF).rotate(new Vector3(0,1,0),-Math.atan2(ea.z,ea.x)+Math.PI/2).add(eo);
+		c=new Vector3(BREAK_TRACK_PIECE_BREAK_SMALLER_WIDTH,y,-BREAK_TRACK_PIECE_BREAK_BIGGER_SIZE_OFF).rotate(new Vector3(0,1,0),-Math.atan2(ea.z,ea.x)+Math.PI/2).add(eo);
+		d=new Vector3(BREAK_TRACK_PIECE_BREAK_SMALLER_WIDTH,y,BREAK_TRACK_PIECE_BREAK_BIGGER_SIZE_OFF).rotate(new Vector3(0,1,0),-Math.atan2(sa.z,sa.x)+Math.PI/2).add(so);
+		_e=new Vector3(BREAK_TRACK_PIECE_BREAK_BIGGER_WIDTH,y+BREAK_TRACK_PIECE_BREAK_HEIGHT,BREAK_TRACK_PIECE_BREAK_SMALLER_SIZE_OFF).rotate(new Vector3(0,1,0),-Math.atan2(sa.z,sa.x)+Math.PI/2).add(so);
+		f=new Vector3(BREAK_TRACK_PIECE_BREAK_BIGGER_WIDTH,y+BREAK_TRACK_PIECE_BREAK_HEIGHT,-BREAK_TRACK_PIECE_BREAK_SMALLER_SIZE_OFF).rotate(new Vector3(0,1,0),-Math.atan2(ea.z,ea.x)+Math.PI/2).add(eo);
+		g=new Vector3(BREAK_TRACK_PIECE_BREAK_SMALLER_WIDTH,y+BREAK_TRACK_PIECE_BREAK_HEIGHT,-BREAK_TRACK_PIECE_BREAK_BIGGER_SIZE_OFF).rotate(new Vector3(0,1,0),-Math.atan2(ea.z,ea.x)+Math.PI/2).add(eo);
+		h=new Vector3(BREAK_TRACK_PIECE_BREAK_SMALLER_WIDTH,y+BREAK_TRACK_PIECE_BREAK_HEIGHT,BREAK_TRACK_PIECE_BREAK_BIGGER_SIZE_OFF).rotate(new Vector3(0,1,0),-Math.atan2(sa.z,sa.x)+Math.PI/2).add(so);
 		a.vertex(gl);
 		b.vertex(gl);
 		c.vertex(gl);

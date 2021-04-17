@@ -159,7 +159,6 @@ public class Vector3 extends Constants{
 		else{
 			a.x-=Math.PI/2;
 		}
-		System.out.println(a);
 		return new Vector3(Math.sin(a.x)*Math.cos(a.y),Math.cos(a.x),Math.sin(a.x)*Math.sin(a.y)).normalize();
 	}
 
