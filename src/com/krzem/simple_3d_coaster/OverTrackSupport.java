@@ -23,6 +23,7 @@ public class OverTrackSupport extends TrackSupport{
 
 
 
+	@Override
 	public void update(GL2 gl){
 		this.ga=this.bm[0];
 		this.gb=this.bm[1];
@@ -30,6 +31,7 @@ public class OverTrackSupport extends TrackSupport{
 
 
 
+	@Override
 	public void draw(GL2 gl){
 		gl.glBegin(GL2.GL_TRIANGLES);
 		gl.glColor3d(this.tsl.tl.sc[0],this.tsl.tl.sc[1],this.tsl.tl.sc[2]);

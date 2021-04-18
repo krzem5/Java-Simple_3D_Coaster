@@ -22,6 +22,7 @@ public class Vector3 extends Constants{
 
 
 
+	@Override
 	public Vector3 clone(){
 		return new Vector3(this.x+0,this.y+0,this.z+0);
 	}

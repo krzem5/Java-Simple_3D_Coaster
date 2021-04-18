@@ -26,6 +26,7 @@ public class LoopTrackPiece extends TrackElement{
 
 
 
+	@Override
 	public void update(GL2 gl){
 		if (this.tli<this.tl.tpl.size()-1&&this.tl.tpl.get(this.tli+1).rpa!=null){
 			this.tl.tpl.get(this.tli+1).rpa.enable(false);
@@ -41,6 +42,7 @@ public class LoopTrackPiece extends TrackElement{
 
 
 
+	@Override
 	public void draw(GL2 gl){
 		this.dpa.draw(gl);
 		this.dpb.draw(gl);
@@ -49,6 +51,7 @@ public class LoopTrackPiece extends TrackElement{
 
 
 
+	@Override
 	public Object[] _regenerate(){
 		ArrayList<Vector3> lc=this._gen_loop_curve(this.a,this.b,this.anc,LOOP_TRACK_PIECE_LENGTH_CURVE_DETAIL);
 		double l=0;

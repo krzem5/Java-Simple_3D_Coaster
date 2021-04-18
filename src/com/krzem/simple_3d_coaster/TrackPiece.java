@@ -29,6 +29,7 @@ public class TrackPiece extends TrackElement{
 
 
 
+	@Override
 	public void update(GL2 gl){
 		this.dpb.enable(this.tli==this.tl.tpl.size()-1);
 		this.rpb.enable(this.tli==this.tl.tpl.size()-1);
@@ -41,6 +42,7 @@ public class TrackPiece extends TrackElement{
 
 
 
+	@Override
 	public void draw(GL2 gl){
 		this.dpa.draw(gl);
 		this.dpb.draw(gl);
@@ -51,6 +53,7 @@ public class TrackPiece extends TrackElement{
 
 
 
+	@Override
 	public Object[] _regenerate(){
 		ArrayList<Vector3> lc=this._gen_curve(this.a,this.b,this.anc,TRACK_PIECE_LENGTH_CURVE_DETAIL);
 		double l=0;

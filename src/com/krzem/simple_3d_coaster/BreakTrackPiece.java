@@ -24,6 +24,7 @@ public class BreakTrackPiece extends TrackElement{
 
 
 
+	@Override
 	public void update(GL2 gl){
 		if (this.tli<this.tl.tpl.size()-1&&this.tl.tpl.get(this.tli+1).rpa!=null){
 			this.tl.tpl.get(this.tli+1).rpa.enable(false);
@@ -37,6 +38,7 @@ public class BreakTrackPiece extends TrackElement{
 
 
 
+	@Override
 	public void draw(GL2 gl){
 		this._draw_track(gl);
 		this.dpa.draw(gl);
@@ -77,6 +79,7 @@ public class BreakTrackPiece extends TrackElement{
 
 
 
+	@Override
 	public Object[] _regenerate(){
 		Vector3 v=this.a.sub(this.b);
 		double l=Math.sqrt(v.x*v.x+v.y*v.y+v.z*v.z);

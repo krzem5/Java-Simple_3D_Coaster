@@ -69,7 +69,7 @@ public class TrackRenderer extends Constants{
 		Vector3 ea=e.normalize();
 		// Vector eaa=ea.angle();
 		// Vecotr3 ep=Vector3.sphere(TRACK_PIECE_BIGGER_RADIUS,eaa.x-Math.PI/2,eaa.y).rotate(ea,eoff);
-		Vector3 ep=ea.plane_perpendicular().mag(TRACK_PIECE_BIGGER_RADIUS).rotate(ea,eoff);
+		// Vector3 ep=ea.plane_perpendicular().mag(TRACK_PIECE_BIGGER_RADIUS).rotate(ea,eoff);
 		gl.glEnd();
 		gl.glBegin(GL2.GL_LINES);
 		gl.glColor3d(1,0,1);

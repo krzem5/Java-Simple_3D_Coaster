@@ -53,7 +53,6 @@ public class TrackData extends Constants{
 
 	public void _regenerate(){
 		ArrayList<Vector3[]> vl=new ArrayList<Vector3[]>();
-		ArrayList<Double> rzl=new ArrayList<Double>();
 		ArrayList<Double> dstl=new ArrayList<Double>();
 		ArrayList<Integer> tsl=new ArrayList<Integer>();
 		double ld=0.0d;
@@ -101,7 +100,7 @@ public class TrackData extends Constants{
 			this.dstl[i]=(double)dstl.get(i);
 		}
 		this.tsl=new int[vl.size()];
-		for (int i=0;i<rzl.size();i++){
+		for (int i=0;i<tsl.size();i++){
 			this.tsl[i]=(int)tsl.get(i);
 		}
 	}

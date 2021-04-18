@@ -174,13 +174,15 @@ public class IO extends Constants{
 			}
 			root.appendChild(te);
 			doc.appendChild(root);
-			StreamResult o=new StreamResult(new FileWriter(new File(fp)));
+			FileWriter fw=new FileWriter(new File(fp));
+			StreamResult o=new StreamResult(fw);
 			Transformer t=TransformerFactory.newInstance().newTransformer();
 			t.setOutputProperty(OutputKeys.INDENT,"yes");
 			t.setOutputProperty("{http://xml.apache.org/xslt}indent-amount","4");
 			t.setOutputProperty(OutputKeys.VERSION,"1.0");
 			t.setOutputProperty(OutputKeys.ENCODING,"utf-8");
 			t.transform(new DOMSource(doc),o);
+			fw.close();
 		}
 		catch (Exception e){
 			e.printStackTrace();
