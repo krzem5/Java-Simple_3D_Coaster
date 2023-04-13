@@ -145,6 +145,7 @@ public class Vector3 extends Constants{
 	}
 
 
+
 	public Vector3 inv(){
 		return new Vector3(-this.x,-this.y,-this.z);
 	}
@@ -174,13 +175,6 @@ public class Vector3 extends Constants{
 	public static Vector3 sphere(double r,double a,double b){
 		return new Vector3(r*Math.sin(a)*Math.cos(b),r*Math.cos(a),r*Math.sin(a)*Math.sin(b));
 	}
-
-
-
-
-
-
-
 
 
 
